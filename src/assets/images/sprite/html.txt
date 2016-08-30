@@ -1,0 +1,15 @@
+<i class="sprite sprite-s_logo"></i>
+<i class="sprite sprite-s_menu"></i>
+<i class="sprite sprite-s_pic1_QA"></i>
+<i class="sprite sprite-s_pic1_ab"></i>
+<i class="sprite sprite-s_pic1_app"></i>
+<i class="sprite sprite-s_pic1_index1"></i>
+<i class="sprite sprite-s_pic1_index2"></i>
+<i class="sprite sprite-s_pic1_index3"></i>
+<i class="sprite sprite-s_pic2_QA"></i>
+<i class="sprite sprite-s_pic2_ab"></i>
+<i class="sprite sprite-s_pic2_index2"></i>
+<i class="sprite sprite-s_pic3_ab"></i>
+<i class="sprite sprite-s_pic4_ab"></i>
+<i class="sprite sprite-s_pic5_ab"></i>
+<i class="sprite sprite-s_pic6_ab"></i>
