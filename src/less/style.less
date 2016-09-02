@@ -1,5 +1,31 @@
-@primary: wheat;
+@primary: white;
+html, body {
+	height: 100%;
+}
 body {
+	padding: 0;
+	margin: 0;
 	background: @primary;
 	font-size: 14px;
+}
+.swiper-container {
+	height: 100%;
+	.swiper-slide {
+		height: 100%;
+		&:nth-child(1) {
+			background: skyblue;
+		}
+		&:nth-child(2) {
+			background: olive;
+		}
+		&:nth-child(3) {
+			background: #0E3359;
+		}
+		&:nth-child(4) {
+			background: #DC5145;
+		}
+		&:nth-child(5) {
+			background: #fff;
+		}
+	}
 }

@@ -27,7 +27,7 @@
 	}
 
 	var Loader = function(imgList, cb, timeout) {
-		timeout = timeout || 5000;
+		timeout = timeout || 5000; // 图片加载超时时间默认为5秒
 		imgList = isArray(imgList) && imgList || [];
 		cb = isFunction(cb) && cb;
 		var total = imgList.length,
