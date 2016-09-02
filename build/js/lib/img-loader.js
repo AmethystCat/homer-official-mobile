@@ -4,7 +4,20 @@
  * @return {img loader obj} 图片预加载对象
  */
 
-;(function() {
+;( function(global, factory) {
+	if (typeof module === 'object' && typeof module.exports === 'object') {
+		module.exports = global.document ?
+		factory(global) :
+		function(w) {
+			if (!w.document) {
+				throw new Error('imgLodaer requires a window with a document');
+			}
+			return factory(w);
+		}
+	} else {
+		factory(global)
+	}
+})(typeof window !== 'undefined' ? window : this, function(window) {
 	function isArray(obj) {
 		return toString.call(obj) === '[object Array]';
 	}
@@ -41,4 +54,4 @@
 	};
 
 	return window.imgLoader = Loader;
-})()
+});
