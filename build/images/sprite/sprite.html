@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sprite</title>
+	<style type="text/css">
+		body {
+			background: skyblue;
+		}
+		.sprite {
+		    background-image: url(spritesheet.png);
+		    background-repeat: no-repeat;
+		    display: block;
+		    background-size: 14.506667rem 10.306667rem;
+		}
+
+		.sprite-s_logo {
+		    /* width: 332px;
+		    height: 42px;
+		    background-position: -5px -5px; */
+		    width: 4.426667rem;
+		    height: 0.56rem;
+		    background-position: -0.066667rem -0.066667rem;
+		}
+
+		.sprite-s_menu {
+		    /* width: 63px;
+		    height: 42px;
+		    background-position: -347px -5px; */
+		    width: 0.84rem;
+		    height: 0.56rem;
+		    background-position: -4.626667rem -0.066667rem;
+		}
+
+		.sprite-s_pic1_QA {
+		    /* width: 28px;
+		    height: 29px;
+		    background-position: -420px -5px; */
+		    width: 0.373333rem;
+		    height: 0.386667rem;
+		    background-position: -5.6rem -0.066667rem;
+		}
+
+		.sprite-s_pic1_ab {
+		    /* width: 325px;
+		    height: 66px;
+		    background-position: -420px -44px; */
+		    width: 4.333333rem;
+		    height: 0.88rem;
+		    background-position: -5.6rem -0.586667rem;
+		}
+
+		.sprite-s_pic1_app {
+		    /* width: 284px;
+		    height: 574px;
+		    background-position: -5px -120px; */
+		    width: 3.786667rem;
+		    height: 7.653333rem;
+		    background-position: -0.066667rem -1.6rem;
+		}
+
+		.sprite-s_pic1_index1 {
+		    /* width: 374px;
+		    height: 124px;
+		    background-position: -299px -120px; */
+		    width: 4.986667rem;
+		    height: 1.653333rem;
+		    background-position: -3.986667rem -1.6rem;
+		}
+
+		.sprite-s_pic1_index2 {
+		    /* width: 372px;
+		    height: 99px;
+		    background-position: -299px -254px; */
+		    width: 4.96rem;
+		    height: 1.32rem;
+		    background-position: -3.986667rem -3.386667rem;
+		}
+
+		.sprite-s_pic1_index3 {
+		    /* width: 178px;
+		    height: 69px;
+		    background-position: -299px -363px; */
+		    width: 2.373333rem;
+		    height: 0.92rem;
+		    background-position: -3.986667rem -4.84rem;
+		}
+
+		.sprite-s_pic2_QA {
+		    /* width: 21px;
+		    height: 18px;
+		    background-position: -458px -5px; */
+		    width: 0.28rem;
+		    height: 0.24rem;
+		    background-position: -6.106667rem -0.066667rem;
+		}
+
+		.sprite-s_pic2_ab {
+		    /* width: 50px;
+		    height: 48px;
+		    background-position: -683px -120px; */
+		    width: 0.666667rem;
+		    height: 0.64rem;
+		    background-position: -9.106667rem -1.6rem;
+		}
+
+		.sprite-s_pic2_index2 {
+		    /* width: 328px;
+		    height: 584px;
+		    background-position: -755px -5px; */
+		    width: 4.373333rem;
+		    height: 7.786667rem;
+		    background-position: -10.066667rem -0.066667rem;
+		}
+
+		.sprite-s_pic3_ab {
+		    /* width: 50px;
+		    height: 48px;
+		    background-position: -299px -599px; */
+		    width: 0.666667rem;
+		    height: 0.64rem;
+		    background-position: -3.986667rem -7.986667rem;
+		}
+
+		.sprite-s_pic4_ab {
+		    /* width: 50px;
+		    height: 48px;
+		    background-position: -359px -599px; */
+		    width: 0.666667rem;
+		    height: 0.64rem;
+		    background-position: -4.786667rem -7.986667rem;
+		}
+
+		.sprite-s_pic5_ab {
+		    /* width: 155px;
+		    height: 152px;
+		    background-position: -419px -599px; */
+		    width: 2.066667rem;
+		    height: 2.026667rem;
+		    background-position: -5.586667rem -7.986667rem;
+		}
+
+		.sprite-s_pic6_ab {
+		    /* width: 147px;
+		    height: 169px;
+		    background-position: -584px -599px; */
+		    width: 1.96rem;
+		    height: 2.253333rem;
+		    background-position: -7.786667rem -7.986667rem;
+		}
+
+	</style>
+</head>
+<body>
+	<i class="sprite sprite-s_logo"></i>
+	<i class="sprite sprite-s_menu"></i>
+	<i class="sprite sprite-s_pic1_QA"></i>
+	<i class="sprite sprite-s_pic1_ab"></i>
+	<i class="sprite sprite-s_pic1_app"></i>
+	<i class="sprite sprite-s_pic1_index1"></i>
+	<i class="sprite sprite-s_pic1_index2"></i>
+	<i class="sprite sprite-s_pic1_index3"></i>
+	<i class="sprite sprite-s_pic2_QA"></i>
+	<i class="sprite sprite-s_pic2_ab"></i>
+	<i class="sprite sprite-s_pic2_index2"></i>
+	<i class="sprite sprite-s_pic3_ab"></i>
+	<i class="sprite sprite-s_pic4_ab"></i>
+	<i class="sprite sprite-s_pic5_ab"></i>
+	<i class="sprite sprite-s_pic6_ab"></i>
+</body>
+<script>
+	;(function(win, lib) {
+	    var doc = win.document;
+	    var docEl = doc.documentElement;
+	    var metaEl = doc.querySelector('meta[name="viewport"]');
+	    var flexibleEl = doc.querySelector('meta[name="flexible"]');
+	    var dpr = 0;
+	    var scale = 0;
+	    var tid;
+	    var flexible = lib.flexible || (lib.flexible = {});
+	    
+	    if (metaEl) {
+	        console.warn('将根据已有的meta标签来设置缩放比例');
+	        var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
+	        if (match) {
+	            scale = parseFloat(match[1]);
+	            dpr = parseInt(1 / scale);
+	        }
+	    } else if (flexibleEl) {
+	        var content = flexibleEl.getAttribute('content');
+	        if (content) {
+	            var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
+	            var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/);
+	            if (initialDpr) {
+	                dpr = parseFloat(initialDpr[1]);
+	                scale = parseFloat((1 / dpr).toFixed(2));    
+	            }
+	            if (maximumDpr) {
+	                dpr = parseFloat(maximumDpr[1]);
+	                scale = parseFloat((1 / dpr).toFixed(2));    
+	            }
+	        }
+	    }
+
+	    if (!dpr && !scale) {
+	        var isAndroid = win.navigator.appVersion.match(/android/gi);
+	        var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+	        var devicePixelRatio = win.devicePixelRatio;
+	        if (isIPhone) {
+	            // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+	            if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {                
+	                dpr = 3;
+	            } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)){
+	                dpr = 2;
+	            } else {
+	                dpr = 1;
+	            }
+	        } else {
+	            // 其他设备下，仍旧使用1倍的方案
+	            dpr = 1;
+	        }
+	        scale = 1 / dpr;
+	    }
+
+	    docEl.setAttribute('data-dpr', dpr);
+	    if (!metaEl) {
+	        metaEl = doc.createElement('meta');
+	        metaEl.setAttribute('name', 'viewport');
+	        metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+	        if (docEl.firstElementChild) {
+	            docEl.firstElementChild.appendChild(metaEl);
+	        } else {
+	            var wrap = doc.createElement('div');
+	            wrap.appendChild(metaEl);
+	            doc.write(wrap.innerHTML);
+	          }
+	    }
+
+	    function refreshRem(){
+	        var width = docEl.getBoundingClientRect().width;
+	        if (width / dpr > 540) {
+	            width = 540 * dpr;
+	        }
+	        var rem = width / 10;
+	        docEl.style.fontSize = rem + 'px';
+	        flexible.rem = win.rem = rem;
+	    }
+
+	    win.addEventListener('resize', function() {
+	        clearTimeout(tid);
+	        tid = setTimeout(refreshRem, 300);
+	    }, false);
+	    win.addEventListener('pageshow', function(e) {
+	        if (e.persisted) {
+	            clearTimeout(tid);
+	            tid = setTimeout(refreshRem, 300);
+	        }
+	    }, false);
+
+	    if (doc.readyState === 'complete') {
+	        doc.body.style.fontSize = 12 * dpr + 'px';
+	    } else {
+	        doc.addEventListener('DOMContentLoaded', function(e) {
+	            doc.body.style.fontSize = 12 * dpr + 'px';
+	        }, false);
+	    }
+	    
+
+	    refreshRem();
+
+	    flexible.dpr = win.dpr = dpr;
+	    flexible.refreshRem = refreshRem;
+	    flexible.rem2px = function(d) {
+	        var val = parseFloat(d) * this.rem;
+	        if (typeof d === 'string' && d.match(/rem$/)) {
+	            val += 'px';
+	        }
+	        return val;
+	    }
+	    flexible.px2rem = function(d) {
+	        var val = parseFloat(d) / this.rem;
+	        if (typeof d === 'string' && d.match(/px$/)) {
+	            val += 'rem';
+	        }
+	        return val;
+	    }
+
+	})(window, window['lib'] || (window['lib'] = {}));
+</script>
+</html>

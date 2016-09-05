@@ -16,7 +16,7 @@
 		<nav>
 			<div class="menu-bar">
 				<i class="logo sprite sprite-s_logo"></i>
-				<button type="button" id="btn-menu" class="btn-menu sprite-s_menu sprite">
+				<button type="button" class="btn-menu sprite-s_menu sprite">
 					菜单
 				</button>
 			</div>
@@ -29,39 +29,25 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="swiper-container swiper-container-con">
-	    <div class="swiper-wrapper">
-	        <div class="swiper-slide swiper-no-swiping section-index">
-
-	        	<div class="swiper-container swiper-index-container">
-				    <div class="swiper-wrapper section-index-w">
-				        <div class="swiper-slide index1">
-				        	<i class="sprite sprite-s_pic1_index1"></i>
-				        	<a href="#" class="btn-download">Download App</a>
-				        </div>
-				        <div class="swiper-slide index2">
-				        	<i class="sprite sprite-s_pic1_index2"></i>
-				        	<i class="sprite sprite-s_pic2_index2"></i>
-				        	<img class="pic3_index2" src="/images/pic1_index3.png" alt="">
-				        	<a class="btn-know-more" href="#">了解更多</a>
-				        </div>
-				        <div class="swiper-slide index3">
-				        	<img src="/images/pic2_index2.png" alt="荷马生活">
-				        	<a class="btn-know-more" href="#">了解更多</a>
-				        </div>
-				    </div>
-				    <!-- 如果需要分页器 -->
-				    <div class="swiper-pagination swiper-index-pagination"></div>
-				</div>
-
+	<div class="swiper-container swiper-index-container">
+	    <div class="swiper-wrapper section-index-w">
+	        <div class="swiper-slide index1">
+	        	<i class="sprite sprite-s_pic1_index1"></i>
+	        	<a href="#" class="btn-download">Download App</a>
 	        </div>
-	        <div class="swiper-slide swiper-no-swiping section-app">荷马生活</div>
-	        <div class="swiper-slide swiper-no-swiping section-lock">荷马智慧安防锁</div>
-	        <div class="swiper-slide swiper-no-swiping section-ab">常见问题</div>
-	        <div class="swiper-slide swiper-no-swiping">关于我们</div>
+	        <div class="swiper-slide index2">
+	        	<i class="sprite sprite-s_pic1_index2"></i>
+	        	<i class="sprite sprite-s_pic2_index2"></i>
+	        	<img class="pic3_index2" src="/images/pic1_index3.png" alt="">
+	        	<a class="btn-know-more" href="#">了解更多</a>
+	        </div>
+	        <div class="swiper-slide index3">
+	        	<img src="/images/pic2_index2.png" alt="荷马生活">
+	        	<a class="btn-know-more" href="#">了解更多</a>
+	        </div>
 	    </div>
 	    <!-- 如果需要分页器 -->
-	    <!-- <div class="swiper-pagination"></div> -->
+	    <div class="swiper-pagination"></div>
 	</div>
 </body>
 <!-- <script src="js/lib/jquery.min.js"></script> -->
@@ -72,65 +58,13 @@
 </script>
 <script>
 	$(function() {
-		/**
-		 * 变量缓存
-		 * 
-		 */
-		var $nav = $('nav'),
-			$toIndex = $('#toIndex'),
-			$toApp = $('#toApp'),
-			$toLock = $('#toLock'),
-			$toQA = $('#toQA'),
-			$toAb = $('#toAb'),
-			$btnMenu = $('#btn-menu'),
-			$menuUl = $('.menu-ul');
-
-		/**
-		 * container swiper
-		 * 
-		 */
-		var containerSwiper = new Swiper('.swiper-container-con', {
+		var containerSwiper = new Swiper('.swiper-index-container', {
 			direction: 'horizontal',
-			autoHeight: true
-		});
-
-		/**
-		 * 首页局部swiper
-		 * 
-		 */
-		var indexSwiper = new Swiper('.swiper-index-container', {
-			direction: 'horizontal',
+			initialSlide: 2,
 			loop: false,
-			pagination: '.swiper-index-pagination',
+			pagination: '.swiper-pagination',
 			autoHeight: true,
-			nested: true,
-			noSwiping: false
-		});
-
-		/**
-		 * 菜单tab切换
-		 * 
-		 */
-		$toIndex.click(function() { containerSwiper.slideTo(0, 500, false); });
-		$toApp.click(function() { containerSwiper.slideTo(1, 500, false); });
-		$toLock.click(function() { containerSwiper.slideTo(2, 500, false); });
-		$toQA.click(function() { containerSwiper.slideTo(3, 500, false); });
-		$toAb.click(function() { containerSwiper.slideTo(4, 500, false); });
-
-		/**
-		 * 菜单toggle show
-		 * 
-		 */
-		$btnMenu.click(function(e) { e.stopPropagation();$('.menu-ul').toggleClass('show');});
-
-		/**
-		 * 点击其余地方隐藏菜单
-		 * 
-		 */
-		$(document).on("touchstart", function(e) {
-        	if($(e.target).parents('nav').length == 0) {
-	            $menuUl.removeClass('show');
-	        }
+			nested: true
 		});
 	});
 </script>
