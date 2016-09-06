@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="x5-fullscreen" content="true">
+	<title>index</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="menu-bar">
+				<i class="logo sprite sprite-s_logo"></i>
+				<button type="button" class="btn-menu sprite-s_menu sprite">
+					菜单
+				</button>
+			</div>
+			<ul class="menu-ul">
+				<li><a href="#" id="toIndex">首页</a></li>
+				<li><a href="#" id="toApp">荷马生活</a></li>
+				<li><a href="#" id="toLock">荷马智慧安防锁</a></li>
+				<li><a href="#" id="toQA">常见问题</a></li>
+				<li><a href="#" id="toAb">关于我们</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="section-ab-w">
+	    <div class="item1">
+	    	<img src="/images/pic1_ab.png" alt="荷马科技智享生活">
+	    	<i class="sprite sprite-s_pic1_ab"></i>
+	    </div>
+	    <div class="item item2">
+	    	<h2><i class="sprite sprite-s_pic2_ab"></i>关于我们</h2>
+	    	<p>
+	    		成都荷码科技有限公司成立于2015年9月，是国内首家以免费软、硬件相结合，发展移动社区服务、智能家居的综合管理平台。
+	    	</p>
+	    	<p>
+	    		依托“智享生活”的公司理念，我们致力于将具有科技感和体验感的智能家居安防产品Homer Smart荷马智慧安防锁与大型社区生活服务平台Homer Live APP相结合，让每个家庭体验到全新科技智能生活方式。
+	    	</p>
+	    	<p>
+	    		目前，公司集聚精锐的科研团队，通过强大的资源整合能力，已与保利、万科、华润、恒大等开发商及物业公司、大型连锁百货公司等建立长期战略合作关系。  
+	    	</p>
+	    </div>
+	    <div class="item item3">
+	    	<h2><i class="sprite sprite-s_pic3_ab"></i>产品和服务</h2>
+	    	<div class="mes mes1">
+	    		<i class="sprite sprite-s_pic5_ab"></i>
+		    	<p>
+		    		Homer Smart荷马智慧安防锁是由成都荷码科技有限公司研发、生产的新一代智能门锁，在通过手机App、密码、钥匙开启门锁的基础上，可实现远程防盗报警、开门信息查看、使用者管理、临时密钥分享、智能家居接口等多项智慧功能。
+		    	</p>
+	    	</div>
+	    	<div class="mes mes2">
+	    		<i class="sprite sprite-s_pic6_ab"></i>
+		    	<p>
+		    		荷马生活作为成都荷码科技有限公司全力打造的大型社区生活服务平台，致力于向全体Homer Smart荷马智慧安防锁用户提供全方位的优质社区生活服务。通过整合生活服务产品 、制定标准化服务流程等方式，与优质商户合作，为社区内人群提供独特、多元的社区服务及优质产品。
+		    	</p>
+	    	</div>
+	    </div>
+	    <div class="item item4">
+	    	<h2><i class="sprite sprite-s_pic4_ab"></i>联系我们</h2>
+	    	<div class="contact-w">
+	    		<div class="c1 way">
+	    			<span>TEL: 028-86533126</span>
+	    			<span>商务合作：marketing@homer.com.cn</span>
+	    		</div>
+	    		<div class="c2 way">
+	    			<span>简历投放：hr@homer.com.cn</span>
+	    			<span>ADD：成都市锦江区东大街芷泉段6号 时代1号3303</span>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+</body>
+<!-- <script src="js/lib/jquery.min.js"></script> -->
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/swiper.jquery.min.js"></script>
+<script>
+	!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=a.navigator.userAgent,q=(!!p.match(/android/gi),!!p.match(/iphone/gi)),r=q&&!!p.match(/OS 9_3/),s=a.devicePixelRatio;i=q&&!r?s>=3&&(!i||i>=3)?3:s>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var t=e.createElement("div");t.appendChild(g),e.write(t.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+</script>
+</html>

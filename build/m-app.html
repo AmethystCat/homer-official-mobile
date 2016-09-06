@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="x5-fullscreen" content="true">
+	<title>app</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="menu-bar">
+				<i class="logo sprite sprite-s_logo"></i>
+				<button type="button" class="btn-menu sprite-s_menu sprite">
+					菜单
+				</button>
+			</div>
+			<ul class="menu-ul">
+				<li><a href="#" id="toIndex">首页</a></li>
+				<li><a href="#" id="toApp">荷马生活</a></li>
+				<li><a href="#" id="toLock">荷马智慧安防锁</a></li>
+				<li><a href="#" id="toQA">常见问题</a></li>
+				<li><a href="#" id="toAb">关于我们</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="section-app-w">
+	    <div class="item1">
+	    	<img src="/images/pic1_app.jpg" alt="荷马生活">
+	    	<div class="tip">
+	    		<i class="sprite sprite-s_pic1_index3"></i>
+	    		<p>智慧生活新选择</p>
+	    		<p>The choice of a new life</p>
+	    	</div>
+	    </div>
+	    <div class="item item2">
+	    	<h1>门锁信息管控</h1>
+	    	<p>
+	    		<span>远程同步报警</span>
+	    		<span>临时密钥分享</span>
+	    		<span>家宅信息管理</span>
+	    		<span>互联接头预留</span>
+	    	</p>
+	    	<img src="/images/pic2_app.png" alt="门锁信息管控">
+	    </div>
+	    <div class="item item3">
+	    	<h1>支付</h1>
+	    	<img src="/images/pic3_app.png" alt="支付">
+	    	<div class="type type1">扫码付款</div>
+	    	<p class="des">便捷支付，荷马生活联营商户随意购</p>
+	    	<div class="type type2">卡券</div>
+	    	<p class="des">无需充值，轻松享受合作商户VIP待遇</p>
+	    	<div class="type type3">荷马积分</div>
+	    	<p class="des">定期返“积分”，“惠”享生活</p>
+	    </div>
+	    <div class="item item4">
+	    	<h1>服务</h1>
+	    	<div class="swiper-w">
+	    		<i class="sprite sprite-s_pic1_app"></i>
+		    	<div class="swiper-container swiper-app-container">
+		    		<div class="swiper-wrapper section-app-w">
+		    			<div class="swiper-slide"><img src="/images/pic4_app.png" alt="名品邮寄"></div>
+		    			<div class="swiper-slide"><img src="/images/pic5_app.png" alt="家电"></div>
+		    			<div class="swiper-slide"><img src="/images/pic6_app.png" alt="家政"></div>
+		    			<div class="swiper-slide"><img src="/images/pic7_app.png" alt="干洗"></div>
+		    		</div>
+		    	</div>
+	    	</div>
+	    	<div class="type type1">家政</div>
+	    	<p class="des">
+	    		基础打扫、深度清洁、房间开荒、厨卫清洗，你所需要的家居清洁荷马生活都能一键满足， 费用透明，流程标准，先服务后买单，提供最贴心的体验。
+	    	</p>
+	    	<div class="type type2">干洗</div>
+	    	<p class="des des2">
+	    		不再需要拎着大包小包的衣物出入干洗店了，有荷马生活，洗衣熨烫都接送货上门。
+	    	</p>
+	    	<div class="type type3">家电</div>
+	    	<p class="des des3">
+	    		<span>家电清洗不再头疼，</span>荷马生活一键享受专门人事上门服务。
+	    	</p>
+	    	<div class="type type4">名品邮寄</div>
+	    	<p class="des">
+	    		没空购物？突然需要礼物？懒得出门买东西？你想要的，荷马生活统统为你满足。
+	    	</p>
+	    </div>
+	    <div class="item item5">
+	    	<h1>小工具</h1>
+	    	<p>
+	    		贴心小工具，边界您的日常生活，正在陆续推出！
+	    	</p>
+	    	<div class="img-w">
+	    		<img src="/images/pic8_app.png" alt="小工具">
+	    	</div>
+	    	<div class="type-w">
+	    		<span class="type type1">天气</span>
+		    	<span class="type type2">限号</span>
+		    	<span class="type type3">话费充值</span>
+	    	</div>
+	    </div>
+	</div>
+</body>
+<!-- <script src="js/lib/jquery.min.js"></script> -->
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/swiper.jquery.min.js"></script>
+<script>
+	!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=a.navigator.userAgent,q=(!!p.match(/android/gi),!!p.match(/iphone/gi)),r=q&&!!p.match(/OS 9_3/),s=a.devicePixelRatio;i=q&&!r?s>=3&&(!i||i>=3)?3:s>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var t=e.createElement("div");t.appendChild(g),e.write(t.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+</script>
+<script>
+	$(function() {
+		var containerSwiper = new Swiper('.swiper-app-container', {
+			direction: 'horizontal',
+			initialSlide: 0,
+			autoplay: 2000,
+			speed: 500,
+			nested: true
+		});
+	});
+</script>
+</html>
