@@ -44,7 +44,7 @@
 			images[i] = new Image();
 			// onerror = _on; 如果某张图片加载失败，则跳过，在进度上依然显示加载完成，以保证最后进度为100%；
 			images[i].onload = images[i].onerror = _on;
-			images.src = imgList[i];
+			images[i].src = imgList[i];
 		}
 
 		// 若在total * timeout 时间范围（loaded < total）内仍然有图片未加载出来，则通知外围图片已全部加载，防止用户等待时间过长。

@@ -1,3 +1,5 @@
+@import url('./loading');
+
 @primary: #E9545E;
 html, body {
 	height: 100%;
@@ -8,6 +10,15 @@ body {
 	background: #fff;
 	font-size: 14px;
 	font-family: "Microsoft Yahei",Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-serif;
+	&.loading {
+		background: skyblue;
+		header {
+			display: none;
+		}
+		.swiper-container {
+			display: none;
+		}
+	}
 }
 img {
 	display: block;
@@ -162,7 +173,7 @@ header {
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			background-color: rgba(0,0,0,.15);
+			background-color: rgba(0,0,0,.25);
 			transition: all .3s ease;
 			overflow: hidden;
 			&.show {
@@ -206,8 +217,8 @@ header {
 		overflow: auto;
 	}
 	.swiper-pagination-bullet {
-		width: 0.333333rem;
-		height: 0.333333rem;
+		width: 0.266667rem;
+		height: 0.266667rem;
 		border: 1px solid #fff;
 		background: transparent;
 		opacity: 1;
@@ -218,6 +229,9 @@ header {
 }
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
 	margin: 0 0.12rem;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+	bottom: 0.133333rem;
 }
 
 /* index swiper */
@@ -514,7 +528,7 @@ header {
 			margin: 0 auto;
 			text-decoration: none;
 			font-size: 15px;
-			font-weight: bold;
+			font-weight: normal;
 			color: #000;
 		}
 	}
@@ -558,6 +572,17 @@ header {
 [data-dpr="2"] .section-lock-w .item4 a {font-size: 40px;}
 [data-dpr="3"] .section-lock-w .item4 a {font-size: 60px;}
 
+@media screen and (max-width: 320px) {
+	.section-lock-w .item1 p {
+		width: 6.5rem;
+	}
+	.section-lock-w .item3 p {
+		width: 6.5rem;
+	}
+	.section-lock-w .item3 a {
+		width: 6.7rem;
+	}
+}
 /* about us style */
 .section-ab-w {
 	h2 {
@@ -632,14 +657,20 @@ header {
 			margin-bottom: 0.64rem;
 		}
 		.way {
-			width: 50%;
 			float: left;
 			font-size: 7px;
+			color: #6a6a6a;
 			span {
 				display: block;
 				&:first-child {
 					padding-bottom: 0.24rem;
 				}
+			}
+			&.c1 {
+				width: 45%;
+			}
+			&.c2 {
+				width: 55%;
 			}
 		}
 	}

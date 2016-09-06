@@ -11,7 +11,14 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="loading">
+	<div class="loader-container">
+		<div class="loader">loading...</div>
+		<div class="percent">
+			<span>Homer Live</span>
+			<span>1%</span>
+		</div>
+	</div>
 	<header>
 		<nav>
 			<div class="menu-bar">
@@ -349,11 +356,12 @@
 	</div>
 </body>
 <!-- <script src="js/lib/jquery.min.js"></script> -->
-<script src="js/lib/zepto.min.js"></script>
-<script src="js/lib/swiper.jquery.min.js"></script>
 <script>
 	!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=a.navigator.userAgent,q=(!!p.match(/android/gi),!!p.match(/iphone/gi)),r=q&&!!p.match(/OS 9_3/),s=a.devicePixelRatio;i=q&&!r?s>=3&&(!i||i>=3)?3:s>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var t=e.createElement("div");t.appendChild(g),e.write(t.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
 </script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/swiper.jquery.min.js"></script>
+<script src="js/lib/img-loader.js"></script>
 <script>
 	$(function() {
 		/**
@@ -370,66 +378,72 @@
 			$menuUl = $('.menu-ul');
 
 		/**
-		 * container swiper
+		 * swipers init
 		 * 
 		 */
-		var containerSwiper = new Swiper('.swiper-container-con', {
-			direction: 'horizontal',
-			autoHeight: true
-		});
+		function swipersInit() {
+			/**
+			 * container swiper
+			 * 
+			 */
+			var containerSwiper = new Swiper('.swiper-container-con', {
+				direction: 'horizontal',
+				autoHeight: true
+			});
 
-		/**
-		 * 首页局部swiper
-		 * 
-		 */
-		var indexSwiper = new Swiper('.swiper-index-container', {
-			direction: 'horizontal',
-			loop: false,
-			pagination: '.swiper-index-pagination',
-			autoHeight: true,
-			nested: true,
-			noSwiping: false
-		});
+			/**
+			 * 首页局部swiper
+			 * 
+			 */
+			var indexSwiper = new Swiper('.swiper-index-container', {
+				direction: 'horizontal',
+				loop: false,
+				pagination: '.swiper-index-pagination',
+				autoHeight: true,
+				nested: true,
+				noSwiping: false
+			});
 
-		/**
-		 * 荷马智慧安防锁swiper
-		 * 
-		 */
-		var lockSwiper = new Swiper('.swiper-lock-container', {
-			direction: 'horizontal',
-			initialSlide: 0,
-			loop: false,
-			autoplay: 2000,
-			speed: 800,
-			loop: true,
-			nested: true,
-			autoplayDisableOnInteraction: false,
-			noSwiping: false
-		});
+			/**
+			 * 荷马智慧安防锁swiper
+			 * 
+			 */
+			var lockSwiper = new Swiper('.swiper-lock-container', {
+				direction: 'horizontal',
+				initialSlide: 0,
+				loop: false,
+				autoplay: 2000,
+				speed: 800,
+				loop: true,
+				nested: true,
+				autoplayDisableOnInteraction: false,
+				noSwiping: false
+			});
 
-		/**
-		 * 荷马生活swiper
-		 * @type {Swiper}
-		 */
-		var appSwiper = new Swiper('.swiper-app-container', {
-			direction: 'horizontal',
-			initialSlide: 0,
-			autoplay: 2000,
-			speed: 500,
-			nested: true,
-			autoplayDisableOnInteraction: false,
-			noSwiping: false
-		});
+			/**
+			 * 荷马生活swiper
+			 * @type {Swiper}
+			 */
+			var appSwiper = new Swiper('.swiper-app-container', {
+				direction: 'horizontal',
+				initialSlide: 0,
+				autoplay: 2000,
+				speed: 500,
+				nested: true,
+				autoplayDisableOnInteraction: false,
+				noSwiping: false
+			});
 
-		/**
-		 * 菜单tab切换
-		 * 
-		 */
-		$toIndex.click(function() { containerSwiper.slideTo(0, 500, false); });
-		$toApp.click(function() { containerSwiper.slideTo(1, 500, false); });
-		$toLock.click(function() { containerSwiper.slideTo(2, 500, false); });
-		$toQA.click(function() { containerSwiper.slideTo(3, 500, false); });
-		$toAb.click(function() { containerSwiper.slideTo(4, 500, false); });
+			/**
+			 * 菜单tab切换
+			 * 
+			 */
+			$toIndex.click(function() { containerSwiper.slideTo(0, 500, false); });
+			$toApp.click(function() { containerSwiper.slideTo(1, 500, false); });
+			$toLock.click(function() { containerSwiper.slideTo(2, 500, false); });
+			$toQA.click(function() { containerSwiper.slideTo(3, 500, false); });
+			$toAb.click(function() { containerSwiper.slideTo(4, 500, false); });
+		}
 
 		/**
 		 * 菜单toggle show
@@ -445,6 +459,37 @@
         	if($(e.target).parents('nav').length == 0) {
 	            $menuUl.removeClass('show');
 	        }
+		});
+
+		/**
+		 * 预加载
+		 */
+		imgLoader([
+			'/images/pic1_ab.png',
+			'/images/pic1_app.jpg',
+			'/images/pic1_index1.jpg',
+			'/images/pic1_index2.jpg',
+			'/images/pic1_index3.png',
+			'/images/pic1_product.png',
+			'/images/pic2_app.png',
+			'/images/pic2_index2.png',
+			'/images/pic2_product.png',
+			'/images/pic3_app.png',
+			'/images/pic5_product.png',
+			'/images/pic6_app.png',
+			'/images/pic7_app.png',
+			'/images/pic8_app.png',
+			'/images/spritesheet.png'
+		], function(p) {
+			var percent = p * 100;
+			$('.percent').children('span:last-child').html(parseInt(percent) + '%');
+			if (p === 1) {
+				setTimeout(function() {
+					$('.loader-container').remove();
+					$('body').removeClass('loading');
+					swipersInit();
+				}, 500);
+			}
 		});
 	});
 </script>
