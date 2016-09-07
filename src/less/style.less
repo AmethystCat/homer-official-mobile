@@ -10,6 +10,7 @@ body {
 	background: #fff;
 	font-size: 14px;
 	font-family: "Microsoft Yahei",Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-serif;
+	-webkit-overflow-scrolling: touch;
 	&.loading {
 		background: skyblue;
 		header {
@@ -17,6 +18,8 @@ body {
 		}
 		.swiper-container {
 			display: none;
+			opacity: .6;
+			-webkit-filter:blur(5px);
 		}
 	}
 }
