@@ -9,10 +9,9 @@ body {
 	margin: 0;
 	background: #fff;
 	font-size: 14px;
-	font-family: "Microsoft Yahei",Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-serif;
 	-webkit-overflow-scrolling: touch;
 	&.loading {
-		background: skyblue;
+		background: @primary;
 		header {
 			display: none;
 		}
@@ -57,6 +56,20 @@ h1 {
     width: 0.373333rem;
     height: 0.386667rem;
     background-position: -5.6rem -0.066667rem;
+    // width: 28px;
+    // height: 29px;
+    // background-image: url('/images/spritesheet.png');
+    // background-position: -420px -5px; 
+}
+
+.sprite-s_pic2_QA {
+    width: 0.3rem;
+    height: 0.25rem;
+    background-position: -6.106667rem -0.066667rem;
+ 	// width: 21px;
+	// height: 18px;
+	// background-image: url('/images/spritesheet.png');
+	// background-position: -458px -5px; 
 }
 
 .sprite-s_pic1_ab {
@@ -87,12 +100,6 @@ h1 {
     width: 2.373333rem;
     height: 0.92rem;
     background-position: -4.1rem -4.84rem;
-}
-
-.sprite-s_pic2_QA {
-    width: 0.3rem;
-    height: 0.25rem;
-    background-position: -6.106667rem -0.066667rem;
 }
 
 .sprite-s_pic2_ab {
@@ -128,7 +135,7 @@ h1 {
 .sprite-s_pic6_ab {
     width: 1.96rem;
     height: 2.253333rem;
-    background-position: -7.786667rem -7.986667rem;
+    background-position: -7.786667rem -8.186667rem;
 }
 
 .sprite {
@@ -148,7 +155,7 @@ header {
 		.menu-bar {
 			height: 1.2rem;
 			border-bottom: 1px solid rgba(0,0,0,.3);
-			background: rgba(0,0,0,.3);
+			background: rgba(0,0,0,.8);
 			.logo {
 				float: left;
 				margin-left: 0.506667rem;
@@ -166,7 +173,7 @@ header {
 					outline: none;
 				}
 				&:active {
-					box-shadow: 0 0 5px #000;
+					box-shadow: 0 0 5px #fff;
 				}
 			}
 		}
@@ -176,8 +183,8 @@ header {
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			background-color: rgba(0,0,0,.25);
-			transition: all .3s ease;
+			background-color: rgba(0,0,0,.8);
+			transition: all .25s ease;
 			overflow: hidden;
 			&.show {
 				height: 1.2rem * 5;
@@ -220,8 +227,8 @@ header {
 		overflow: auto;
 	}
 	.swiper-pagination-bullet {
-		width: 0.266667rem;
-		height: 0.266667rem;
+		width: 0.15rem;
+		height: 0.15rem;
 		border: 1px solid #fff;
 		background: transparent;
 		opacity: 1;
@@ -274,7 +281,7 @@ header {
 			text-decoration: none;
 			text-align: center;
 			color: #fff;
-			transition: all .3s ease;
+			transition: all .2s ease;
 			&:focus {
 				outline: none;
 			}
@@ -295,10 +302,11 @@ header {
 		}
 		.pic3_index2 {
 			position: absolute;
-			width: 2.186667rem;
+			width: 2.8rem;
 			height: 1.506667rem;
 			top: 7.233333rem;
-			left: 1.5rem;
+			left: 1.2rem;
+			color: #f2f2f2;
 		}
 		.btn-know-more {
 			text-align: center;
@@ -443,6 +451,15 @@ header {
 		.type-w {
 			display: -webkit-flex;
 			display: flex;
+			align-items: center;
+			display: -webkit-box; 
+			-webkit-box-align: center;
+			> div {
+				-webkit-flex: 1;
+				flex: 1;
+				-webkit-box-flex: 1;
+				text-align: center;
+			}
 		}
 	}
 }
@@ -450,7 +467,7 @@ header {
 [data-dpr="2"] .section-app-w p, 
 [data-dpr="2"] .section-app-w .type {font-size: 20px;}
 [data-dpr="3"] .section-app-w p, 
-[data-dpr="3"].section-app-w .type {font-size: 30px;}
+[data-dpr="3"] .section-app-w .type {font-size: 30px;}
 
 [data-dpr="2"] .section-app-w .item1 .tip p {font-size: 18px;}
 [data-dpr="3"] .section-app-w .item1 .tip p {font-size: 27px;}
@@ -461,6 +478,22 @@ header {
 /* homer lock style*/
 .section-lock-w {
 	@bg: #c4c5c4;
+	// h1 居中，p左对齐h1
+	.wc1 {
+		text-align: center;
+		.wc2 {
+			display: inline-block;
+			h1 {
+				display: inline-block;
+			}
+			p {
+				text-align: left;
+			}
+			a {
+				text-align: left;
+			}
+		}
+	}
 	.item1 {
 		padding-top: 3.0rem;
 		padding-bottom: 1.6rem;
@@ -477,8 +510,8 @@ header {
 			padding: 1.92rem 0 0.653333rem 0;
 		}
 		p {
-			width: 5.5rem;
-			margin: 0 auto;
+			// width: 5.5rem;
+			// margin: 0 auto;
 			text-align: left;
 			span {
 				display: block;
@@ -512,12 +545,12 @@ header {
 			width: 80%;
 		}
 		h1 {
-			margin-bottom: 0.2rem;
+			margin: 0 auto 0.5rem;
 		}
 		p {
-			width: 5.8rem;
-			margin: 0 auto;
-			text-align: left;
+			// width: 6rem;
+			// margin: 0 auto;
+			// text-align: left;
 			font-size: 11px;
 			span {
 				display: block;
@@ -527,8 +560,8 @@ header {
 		}
 		a {
 			display: block;
-			width: 5.8rem;
-			margin: 0 auto;
+			// width: 6rem;
+			// margin: 0 auto;
 			text-decoration: none;
 			font-size: 15px;
 			font-weight: normal;
@@ -575,17 +608,6 @@ header {
 [data-dpr="2"] .section-lock-w .item4 a {font-size: 40px;}
 [data-dpr="3"] .section-lock-w .item4 a {font-size: 60px;}
 
-@media screen and (max-width: 320px) {
-	.section-lock-w .item1 p {
-		width: 6.5rem;
-	}
-	.section-lock-w .item3 p {
-		width: 6.5rem;
-	}
-	.section-lock-w .item3 a {
-		width: 6.7rem;
-	}
-}
 /* about us style */
 .section-ab-w {
 	h2 {
@@ -601,6 +623,7 @@ header {
 	}
 	.item i {
 		display: inline-block;
+		vertical-align: -0.16rem;
 	}
 	.item1 {
 		img {
@@ -633,13 +656,26 @@ header {
 				line-height: 1.3;
 			}
 		}
+		.i1 {
+			width: 1.84rem;
+			height: 1.84rem;
+			background: url('/images/s_pic5_ab.jpg') no-repeat;
+			background-size: contain;
+		}
+		.i2 {
+			width: 1.84rem;
+			height: 1.84rem;
+			background: url('/images/s_pic6_ab.jpg') no-repeat;
+			background-size: contain;
+		}
 		.mes1 {
 			margin-bottom: 0.413333rem;
 			i {
 				float: left;
 			}
 			p {
-				padding-left: 2.2rem;
+				padding-left: 2.1rem;
+				text-indent: 2em;
 			}
 		}
 		.mes2 {
@@ -648,6 +684,7 @@ header {
 			}
 			p {
 				padding-right: 2rem;
+				text-indent: 2em;
 			}
 		}
 		
@@ -661,7 +698,6 @@ header {
 		}
 		.way {
 			float: left;
-			font-size: 7px;
 			color: #6a6a6a;
 			span {
 				display: block;
@@ -670,20 +706,19 @@ header {
 				}
 			}
 			&.c1 {
-				width: 45%;
+				width: 48%;
+				padding-right: 2%;
 			}
 			&.c2 {
-				width: 55%;
+				width: 50%;
 			}
 		}
 	}
 }
-[data-dpr="2"] .section-ab-w .item4 .way {font-size: 14px;}
-[data-dpr="3"] .section-ab-w .item4 .way {font-size: 21px;}
 
 /* QA style */
 .section-qa-w {
-	margin: 2.266667rem 0.853333rem;
+	margin: 2.266667rem 0.853333rem 0.666667rem;
 	h1 {
 		margin-bottom: 0.44rem;
 		text-align: left;

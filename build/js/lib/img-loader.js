@@ -19,16 +19,17 @@
 	}
 })(typeof window !== 'undefined' ? window : this, function(window) {
 	function isArray(obj) {
-		return toString.call(obj) === '[object Array]';
+		return Object.prototype.toString.call(obj) === '[object Array]';
 	}
 
 	function isFunction(obj) {
-		return toString.call(obj) === '[object Function]';
+		return Object.prototype.toString.call(obj) === '[object Function]';
 	}
-
 	var Loader = function(imgList, cb, timeout) {
+		// alert(cb);
 		timeout = timeout || 5000; // 图片加载超时时间默认为5秒
 		imgList = isArray(imgList) && imgList || [];
+		isFunction(cb);
 		cb = isFunction(cb) && cb;
 		var total = imgList.length,
 			loaded = 0,

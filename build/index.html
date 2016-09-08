@@ -6,17 +6,20 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="x5-fullscreen" content="true">
-	<title>Homer Live</title>
+	<meta name="description" content="荷马生活家，开启您发贵宾生活新选择。"/>
+	<title>荷马生活家</title>
+	<link rel="shortcut icon" href="myIcon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="loading">
 	<div class="loader-container">
+		<!-- <a href="javascript: window.location.href='/?' + Math.random()">refresh</a> -->
 		<div class="loader">loading...</div>
 		<div class="percent">
 			<span>Homer Live</span>
-			<span>1%</span>
+			<span id="per">1%</span>
 		</div>
 	</div>
 	<header>
@@ -44,17 +47,22 @@
 				    <div class="swiper-wrapper section-index-w">
 				        <div class="swiper-slide index1">
 				        	<i class="sprite sprite-s_pic1_index1"></i>
-				        	<a href="#" class="btn-download">Download App</a>
+				        	<a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.com.homer.eu" class="btn-download">Download App</a>
 				        </div>
 				        <div class="swiper-slide index2">
 				        	<i class="sprite sprite-s_pic1_index2"></i>
 				        	<i class="sprite sprite-s_pic2_index2"></i>
-				        	<img class="pic3_index2" src="/images/pic1_index3.png" alt="">
-				        	<a class="btn-know-more" href="#">了解更多</a>
+				        	<!-- <img class="pic3_index2" src="/images/pic1_index3.png" alt=""> -->
+				        	<div class="pic3_index2">
+				        		<p>超B级专利锁芯</p>
+				        		<p>精铸锁体</p>
+				        		<p>App智能解锁</p>
+				        	</div>
+				        	<a class="btn-know-more btn-know-more-lock" href="#">了解更多</a>
 				        </div>
 				        <div class="swiper-slide index3">
 				        	<img src="/images/pic2_index2.png" alt="荷马生活">
-				        	<a class="btn-know-more" href="#">了解更多</a>
+				        	<a class="btn-know-more btn-know-more-app" href="#">了解更多</a>
 				        </div>
 				    </div>
 				    <!-- 如果需要分页器 -->
@@ -62,7 +70,7 @@
 				</div>
 
 	        </div>
-	        <div class="swiper-slide swiper-no-swiping section-app">
+	        <div class="swiper-slide swiper-no-swiping">
 	        	<!-- 荷马生活 -->
 	        	<div class="section-app-w">
 				    <div class="item1">
@@ -132,15 +140,15 @@
 				    		<img src="/images/pic8_app.png" alt="小工具">
 				    	</div>
 				    	<div class="type-w">
-				    		<span class="type type1">天气</span>
-					    	<span class="type type2">限号</span>
-					    	<span class="type type3">话费充值</span>
+				    		<div><span class="type type1">天气</span></div>
+					    	<div><span class="type type2">限号</span></div>
+					    	<div><span class="type type3">话费充值</span></div>
 				    	</div>
 				    </div>
 				</div>
 
 	        </div>
-	        <div class="swiper-slide swiper-no-swiping section-lock">
+	        <div class="swiper-slide swiper-no-swiping">
 	        	<!-- 荷马智慧安防锁 -->
 	        	<div class="section-lock-w">
 				    <div class="item1">
@@ -160,13 +168,17 @@
 						    <div class="swiper-pagination"></div>
 						</div>
 						<div class="tips">
-							<h1>安全稳定&nbsp;&nbsp;极速开门</h1>
-							<p>
-								<span>标准锁体 省心方便通用</span>
-								<span>公安部、欧盟CE权威认证</span>
-								<span>金属精制工艺 防水防潮防霉</span>
-								<span>超B级专利锁芯 抵抗技术性强制破解</span>
-							</p>
+							<div class="wc1">
+								<div class="wc2">
+									<h1>安全稳定&nbsp;极速开门</h1>
+									<p>
+										<span>标准锁体 省心方便通用</span>
+										<span>公安部、欧盟CE权威认证</span>
+										<span>金属精制工艺 防水防潮防霉</span>
+										<span>超B级专利锁芯 抵抗技术性强制破解</span>
+									</p>
+								</div>
+							</div>
 						</div>
 				    </div>
 				    <div class="item2">
@@ -179,24 +191,28 @@
 				    </div>
 				    <div class="item3">
 				    	<img src="/images/pic5_product.png" alt="智能连接">
-				    	<h1>与荷马生活智能连接</h1>
-				    	<p>
-				    		<span>多种方式智慧开启</span>
-							<span>24小时保护居家安全</span>
-							<span>您提供多样智慧生活新选择</span>
-				    	</p>
-				    	<a href="#">了解 荷马生活 APP ></a>
+				    	<div class="wc1">
+				    		<div class="wc2">
+				    			<h1>与荷马生活智能连接</h1>
+						    	<p>
+						    		<span>多种方式智慧开启</span>
+									<span>24小时保护居家安全</span>
+									<span>您提供多样智慧生活新选择</span>
+						    	</p>
+						    	<a href="#" class="btn-know-app">了解 荷马生活 APP ></a>
+				    		</div>
+				    	</div>
 				    </div>
 				    <div class="item4">
 				    	<p>您可以通过我们的在线商城和</p>
 				    	<p>荷马生活 App来选购需要的产品</p>
-				    	<a href="#">去淘宝选购</a>
-				    	<a href="#">去苏宁选购</a>
+				    	<a href="https://shop152337292.taobao.com/">去淘宝选购</a>
+				    	<a href="http://homersmart.suning.com/">去苏宁选购</a>
 				    </div>
 				</div>
 
 	        </div>
-	        <div class="swiper-slide swiper-no-swiping section-ab">
+	        <div class="swiper-slide swiper-no-swiping">
 	        	<!-- 常见问题 -->
 	        	<div class="section-qa-w">
 				    <h1><i class="sprite sprite-s_pic1_QA"></i>常见问题</h1>
@@ -324,15 +340,15 @@
 				    <div class="item item3">
 				    	<h2><i class="sprite sprite-s_pic3_ab"></i>产品和服务</h2>
 				    	<div class="mes mes1">
-				    		<i class="sprite sprite-s_pic5_ab"></i>
+				    		<i class="i1"></i>
 					    	<p>
-					    		Homer Smart荷马智慧安防锁是由成都荷码科技有限公司研发、生产的新一代智能门锁，在通过手机App、密码、钥匙开启门锁的基础上，可实现远程防盗报警、开门信息查看、使用者管理、临时密钥分享、智能家居接口等多项智慧功能。
+					    		Homer Smart荷马智慧安防锁是由成都荷码科技有限公司研发、生产的新一代智能门锁，在通过手机App、密码 、钥匙开启门锁的基础上，可实现远程防盗报警、开门信息查看、使用者管理、临时密钥分享、智能家居接口等多项智慧功能。
 					    	</p>
 				    	</div>
 				    	<div class="mes mes2">
-				    		<i class="sprite sprite-s_pic6_ab"></i>
+				    		<i class="i2"></i>
 					    	<p>
-					    		荷马生活作为成都荷码科技有限公司全力打造的大型社区生活服务平台，致力于向全体Homer Smart荷马智慧安防锁用户提供全方位的优质社区生活服务。通过整合生活服务产品 、制定标准化服务流程等方式，与优质商户合作，为社区内人群提供独特、多元的社区服务及优质产品。
+					    		荷马生活作为成都荷码科技有限公司全力打造的大型社区生活服务平台，致力于向全体Homer Smart荷马智慧安防锁用户提供全方位的优质社区生活服务 。通过整合生活服务产品 、制定标准化服务流程等方式，与优质商户合作，为社区内人群提供独特、多元的社区服务及优质产品。
 					    	</p>
 				    	</div>
 				    </div>
@@ -341,11 +357,11 @@
 				    	<div class="contact-w">
 				    		<div class="c1 way">
 				    			<span>TEL: 028-86533126</span>
-				    			<span>商务合作：marketing@homer.com.cn</span>
+				    			<span>ADD：成都市锦江区东大街芷泉段6号 时代1号3303</span>
 				    		</div>
 				    		<div class="c2 way">
 				    			<span>简历投放：hr@homer.com.cn</span>
-				    			<span>ADD：成都市锦江区东大街芷泉段6号 时代1号3303</span>
+				    			<span>商务合作：marketing@homer.com.cn</span>
 				    		</div>
 				    	</div>
 				    </div>
@@ -375,7 +391,10 @@
 			$toQA = $('#toQA'),
 			$toAb = $('#toAb'),
 			$btnMenu = $('#btn-menu'),
-			$menuUl = $('.menu-ul');
+			$menuUl = $('.menu-ul'),
+			$btnKnowMoreLock = $('.btn-know-more-lock'),
+			$btnKnowMoreApp = $('.btn-know-more-app'),
+			$btnKnowApp = $('.btn-know-app');
 
 		/**
 		 * swipers init
@@ -438,11 +457,14 @@
 			 * 菜单tab切换
 			 * 
 			 */
-			$toIndex.click(function() { containerSwiper.slideTo(0, 500, false); });
-			$toApp.click(function() { containerSwiper.slideTo(1, 500, false); });
-			$toLock.click(function() { containerSwiper.slideTo(2, 500, false); });
-			$toQA.click(function() { containerSwiper.slideTo(3, 500, false); });
-			$toAb.click(function() { containerSwiper.slideTo(4, 500, false); });
+			$toIndex.click(function(e) { e.preventDefault(); containerSwiper.slideTo(0, 500, false); $('.menu-ul').removeClass('show'); });
+			$toApp.click(function(e) { e.preventDefault(); containerSwiper.slideTo(1, 500, false); $('.menu-ul').removeClass('show'); });
+			$toLock.click(function(e) { e.preventDefault(); containerSwiper.slideTo(2, 500, false); $('.menu-ul').removeClass('show'); });
+			$toQA.click(function(e) { e.preventDefault(); containerSwiper.slideTo(3, 500, false); $('.menu-ul').removeClass('show'); });
+			$toAb.click(function(e) { e.preventDefault(); containerSwiper.slideTo(4, 500, false); $('.menu-ul').removeClass('show'); });
+			$btnKnowMoreLock.click(function(e) { e.preventDefault(); containerSwiper.slideTo(2, 500, false); $('.menu-ul').removeClass('show'); });
+			$btnKnowMoreApp.click(function(e) { e.preventDefault(); containerSwiper.slideTo(1, 500, false); $('.menu-ul').removeClass('show'); });
+			$btnKnowApp.click(function(e) { e.preventDefault(); containerSwiper.slideTo(1, 500, false); $('.menu-ul').removeClass('show'); });
 		}
 
 		/**
@@ -479,10 +501,12 @@
 			'/images/pic6_app.png',
 			'/images/pic7_app.png',
 			'/images/pic8_app.png',
-			'/images/spritesheet.png'
+			'/images/spritesheet.png',
+			'/images/s_pic5_ab.jpg',
+			'/images/s_pic6_ab.jpg'
 		], function(p) {
 			var percent = p * 100;
-			$('.percent').children('span:last-child').html(parseInt(percent) + '%');
+			$('#per').html(parseInt(percent) + '%');
 			if (p === 1) {
 				setTimeout(function() {
 					$('.loader-container').remove();
