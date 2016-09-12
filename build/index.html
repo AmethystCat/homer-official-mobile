@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<div style="display: none" class="shareThumbnail"><img src="/images/logo.jpg" alt="荷马生活家" title="用户移动端浏览器分享时抓取的缩略图"></div>
 <body class="loading">
 	<div class="loader-container">
 		<!-- <a href="javascript: window.location.href='/?' + Math.random()">refresh</a> -->
@@ -487,36 +486,42 @@
 		/**
 		 * 预加载
 		 */
-		imgLoader([
-			'/images/pic1_ab.png',
-			'/images/pic1_app.jpg',
-			'/images/pic1_index1.jpg',
-			'/images/pic1_index2.jpg',
-			'/images/pic1_index3.png',
-			'/images/pic1_product.png',
-			'/images/pic2_app.png',
-			'/images/pic2_index2.png',
-			'/images/pic2_product.png',
-			'/images/pic3_app.png',
-			'/images/pic5_product.png',
-			'/images/pic6_app.png',
-			'/images/pic7_app.png',
-			'/images/pic8_app.png',
-			'/images/spritesheet.png',
-			'/images/s_pic5_ab.jpg',
-			'/images/s_pic6_ab.jpg',
-			'/images/logo.jpg'
-		], function(p) {
-			var percent = p * 100;
-			$('#per').html(parseInt(percent) + '%');
-			if (p === 1) {
-				setTimeout(function() {
-					$('.loader-container').remove();
-					$('body').removeClass('loading');
-					swipersInit();
-				}, 500);
-			}
-		});
+		if (imgLoader) {
+			imgLoader([
+				'/images/pic1_ab.png',
+				'/images/pic1_app.jpg',
+				'/images/pic1_index1.jpg',
+				'/images/pic1_index2.jpg',
+				'/images/pic1_index3.png',
+				'/images/pic1_product.png',
+				'/images/pic2_app.png',
+				'/images/pic2_index2.png',
+				'/images/pic2_product.png',
+				'/images/pic3_app.png',
+				'/images/pic5_product.png',
+				'/images/pic6_app.png',
+				'/images/pic7_app.png',
+				'/images/pic8_app.png',
+				'/images/spritesheet.png',
+				'/images/s_pic5_ab.jpg',
+				'/images/s_pic6_ab.jpg',
+				'/images/logo.jpg'
+			], function(p) {
+				var percent = p * 100;
+				$('#per').html(parseInt(percent) + '%');
+				if (p === 1) {
+					setTimeout(function() {
+						$('.loader-container').remove();
+						$('body').removeClass('loading');
+						swipersInit();
+					}, 500);
+				}
+			});
+		} else {
+			$('.loader-container').remove();
+			$('body').removeClass('loading');
+			swipersInit();
+		}
 	});
 </script>
 <script src="//qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js"></script>
@@ -544,86 +549,80 @@ $.ajax({
 });
 
 function cb(data) {
-
 	var shareObj = {
 		title: '荷马生活家',
 		desc: '开启您的贵宾生活新选择。',
 		link: whref,
 		imgUrl: whref + 'images/logo.jpg'
 	};
-
-	var wxConfig = {
-		debug: true,
-	    appId: '',
-	    timestamp: '',
-	    nonceStr: '',
-	    signature: '',
-	    jsApiList: [
-			'onMenuShareTimeline',
-			'onMenuShareAppMessage',
-			'onMenuShareQQ',
-			'onMenuShareQZone'
-	    ]
-	};
-
 	var qqConfig = {
-	        swapTitleInWX: true, // 是否标题内容互换（仅朋友圈，因朋友圈内只显示标题）
+	        swapTitleInWX: false, // 是否标题内容互换（仅朋友圈，因朋友圈内只显示标题）
 	        appId: '', // 公众号的唯一标识
 	        timestamp: '', // 生成签名的时间戳
 	        nonceStr: '', // 生成签名的随机串
 	        signature: '' // 签名
 	    };
-
-	var objWx = $.extend(true, {}, wxConfig, data || {});
-	// var objQQ = $.extend(true, {}, qqConfig, data || {});
-	
+	var objQQ = $.extend(true, {}, qqConfig, data || {});
+	// 配置qq分享
 	setShareInfo({
-	    title:   '荷马生活家', // 分享标题
-	    summary: '开启您的贵宾生活新选择。', // 分享内容
-	    pic: whref + 'images/logo.jpg', // 分享图片
+	    title:   shareObj.title ||'', // 分享标题
+	    summary: shareObj.desc || '', // 分享内容
+	    pic: shareObj.imgUrl, // 分享图片
 	    url: whref, // 分享链接
 	    // 微信权限验证配置信息，若不在微信传播，可忽略
-	    WXconfig: qqConfig
+	    WXconfig: objQQ
 	});
 
-	wx.config(objWx);
-
-	wx.error(function(res) {
-		alert(res.errMsg);
-	});
-
-	wx.ready(function() {
-		// 分享到朋友圈
-		wx.onMenuShareTimeline({
-		    title: shareObj.title,
-		    link: shareObj.link,
-		    imgUrl: shareObj.imgUrl
+	if (wx) {
+		var wxConfig = {
+				debug: false,
+			    appId: '',
+			    timestamp: '',
+			    nonceStr: '',
+			    signature: '',
+			    jsApiList: [
+					'onMenuShareTimeline',
+					'onMenuShareAppMessage',
+					'onMenuShareQQ',
+					'onMenuShareQZone'
+			    ]
+			};
+		var objWx = $.extend(true, {}, wxConfig, data || {});
+		// 配置微信分享
+		wx.config(objWx);
+		wx.error(function(res) {
+			alert(res.errMsg);
 		});
-
-		// 分享给朋友
-		wx.onMenuShareAppMessage({
-		    title: shareObj.title,
-		    desc: shareObj.desc,
-		    link: shareObj.link,
-		    imgUrl: shareObj.imgUrl
+		wx.ready(function() {
+			// 分享到朋友圈
+			wx.onMenuShareTimeline({
+			    title: shareObj.title,
+			    link: shareObj.link,
+			    imgUrl: shareObj.imgUrl
+			});
+			// 分享给朋友
+			wx.onMenuShareAppMessage({
+			    title: shareObj.title,
+			    desc: shareObj.desc,
+			    link: shareObj.link,
+			    imgUrl: shareObj.imgUrl
+			});
+			// 分享到qq
+			wx.onMenuShareQQ({
+			    title: shareObj.title,
+			    desc: shareObj.desc,
+			    link: shareObj.link,
+			    imgUrl: shareObj.imgUrl
+			});
+			// 分享到qq空间
+			wx.onMenuShareQZone({
+			    title: shareObj.title,
+			    desc: shareObj.desc,
+			    link: shareObj.link,
+			    imgUrl: shareObj.imgUrl
+			});
 		});
-
-		// 分享到qq
-		wx.onMenuShareQQ({
-		    title: shareObj.title,
-		    desc: shareObj.desc,
-		    link: shareObj.link,
-		    imgUrl: shareObj.imgUrl
-		});
-
-		// 分享到qq空间
-		wx.onMenuShareQZone({
-		    title: shareObj.title,
-		    desc: shareObj.desc,
-		    link: shareObj.link,
-		    imgUrl: shareObj.imgUrl
-		});
-	});
+	}
 }
 </script>
 </html>
